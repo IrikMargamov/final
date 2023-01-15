@@ -1,15 +1,18 @@
 import csv
 
-
-def date_corrector(data):
+# Функция получает данные с неодинаково оформленными датами и приводит к одному виду.
+def corrector(data: any) -> list: 
     
-    row = next(data)
-    date_ind = row.index('Release Date')
+    row: any = next(data) # задаем условие начала работы цикла
+    date_ind: any = row.index('Release Date') # задаем столбец, в котором введены форматируемые данные
+    lst: list = [row] # вводим список для записи данных с датами в едином формате
         
-    for row in data:
-        new_date = row[date_ind].split()
-        new_date = '.'.join(new_date)
     
-    return new_date
+    for row in data: # цикл для перебора строк данных с форматируемыми датами
+        new_date: any = row[date_ind].split() # вывод значения даты данной строки
+        row[date_ind]: any = '.'.join(new_date) # присвоение ячейке с датой значения в нужном формате
+        lst.append(row) # добавление отформатированной строки в заданный список
+
+    return lst
 
 
