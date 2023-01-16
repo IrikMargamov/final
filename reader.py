@@ -13,3 +13,4 @@ with open('new_data.csv', 'w', newline='') as f:
     writer: any = csv.writer(f)
     writer.writerows(new_data)
     
+    
