@@ -1,6 +1,9 @@
 import csv
 import date_corrector
-
+''' 
+код позволяет запустить функцию date_corrector.py и откорректировать отображение дат в виде промежуточного 
+файла new_data.csv
+'''
 # открываем для чтения файл с данными
 with open("spotify_songs_top_100.csv") as f:
     data: any = csv.reader(f)
@@ -12,5 +15,4 @@ with open("spotify_songs_top_100.csv") as f:
 with open('new_data.csv', 'w', newline='') as f:
     writer: any = csv.writer(f)
     writer.writerows(new_data)
-    
     
